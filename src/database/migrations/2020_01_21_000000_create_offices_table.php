@@ -13,6 +13,7 @@ class CreateOfficesTable extends Migration
      */
     public function up()
     {
+        // test
         Schema::create('offices', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('office_number', 30)->nullable();
