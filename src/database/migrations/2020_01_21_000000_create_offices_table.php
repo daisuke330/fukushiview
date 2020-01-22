@@ -31,6 +31,7 @@ class CreateOfficesTable extends Migration
         });
     }
 
+
     /**
      * Reverse the migrations.
      *

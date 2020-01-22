@@ -26,6 +26,7 @@ class CreateReviewsTable extends Migration
         });
     }
 
+
     /**
      * Reverse the migrations.
      *
