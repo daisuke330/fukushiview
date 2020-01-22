@@ -17,7 +17,7 @@ class CreateOfficesTable extends Migration
             $table->bigIncrements('id');
             $table->string('office_number', 30)->nullable();
             $table->string('office_name', 30);
-            $table->char('categories_id', 3);
+            $table->char('category_id', 3);
             $table->string('address', 255);
             $table->string('phone_number', 20)->nullable();
             $table->string('fax_number', 20)->nullable();
@@ -27,6 +27,7 @@ class CreateOfficesTable extends Migration
             $table->unsignedInteger('votes')->default(0);
             $table->datetime('created_at');
             $table->datetime('updated_at');
+            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 
