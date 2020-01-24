@@ -20,9 +20,9 @@ class CreateReviewsTable extends Migration
             $table->text('strong_point');
             $table->text('weak_point');
             $table->datetime('posted_at');
-            $table->bool('is_pre');
-            $table->foreign('office_id')->references('id')->on('offices');
-            $table->foreign('member_id')->references('member_id')->on('members');
+            $table->boolean('is_pre');
+            // $table->foreign('office_id')->references('id')->on('offices');
+            // $table->foreign('member_id')->references('member_id')->on('members');
         });
     }
 
