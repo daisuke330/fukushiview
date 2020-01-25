@@ -27,7 +27,7 @@ class CreateOfficesTable extends Migration
             $table->unsignedInteger('votes')->default(0);
             $table->datetime('created_at');
             $table->datetime('updated_at');
-            // $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 

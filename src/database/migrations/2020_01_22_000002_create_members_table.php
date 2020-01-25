@@ -25,7 +25,7 @@ class CreateMembersTable extends Migration
             $table->string('password', 100);
             $table->datetime('created_at');
             $table->datetime('updated_at');
-            // $table->foreign('member_id')->references('member_id')->on('members');
+            // $table->primary(['id','member_id');
         });
     }
 
