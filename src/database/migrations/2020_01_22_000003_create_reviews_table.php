@@ -16,13 +16,13 @@ class CreateReviewsTable extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('office_id');
-            $table->string('member_id', 30);
+            $table->unsignedBigInteger('member_id');
             $table->text('strong_point');
             $table->text('weak_point');
             $table->datetime('posted_at');
             $table->boolean('is_pre');
             $table->foreign('office_id')->references('id')->on('offices');
-            // $table->foreign('member_id')->references('member_id')->on('members');
+            $table->foreign('member_id')->references('id')->on('members');
         });
     }
 
