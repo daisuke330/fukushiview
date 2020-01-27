@@ -90,6 +90,12 @@
             align-items: center;
         }
 
+        .radio {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         /* .search_container {
             box-sizing: border-box;
         }

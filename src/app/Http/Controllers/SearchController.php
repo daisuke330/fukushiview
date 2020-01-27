@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB; //付け加える
 
-use App\Offices; //付け加える
+use App\Office; //付け加える
 
 class SearchController extends Controller
 {
@@ -22,8 +22,8 @@ class SearchController extends Controller
                 ->where('office_name', 'like', '%' . $keyword . '%')
                 ->paginate(4);
 
-            //リレーション関係にあるテーブルの材料名から検索
-            $offices = Category::whereHas('categories', function ($query) use ($keyword) {
+            //リレーション関係にあるテーブルの事業種名から検索
+            $offices = Office::whereHas('categories', function ($query) use ($keyword) {
                 $query->where('category_name', 'like', '%' . $keyword . '%');
             })->paginate(4);
         } else { //キーワードが入力されていない場合

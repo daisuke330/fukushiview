@@ -9,6 +9,7 @@
 <img src='login.png' alt='login' class='absolute2'>
 @endsection
 @section('content')
+
 <div class='title_comment'>
     <h2>障がい福祉事業所の口コミを読む・書く</h2>
 </div>

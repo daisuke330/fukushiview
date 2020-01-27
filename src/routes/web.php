@@ -43,6 +43,10 @@ Route::resource('members', 'MembersController')->only([
     'index', 'store', 'edit', 'update', 'destroy'
 ]);
 
+Route::resource('offices', 'OfficesController')->only([
+    'index', 'store', 'edit', 'update', 'destroy'
+]);
+
 
 // Route::get('/top', 'TopController@show');
 // Route::post('/top2', 'TopController@regist');

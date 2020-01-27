@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Validator;
-use App\Member;
+use App\Office;
 
 
-class MembersController extends Controller
+class OfficesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +17,12 @@ class MembersController extends Controller
      */
     public function index()
     {
-        $members = Member::all();
-        // 以下を追加
-        return view('members');
+        // 下記のように編集
+        $offices = Office::orderBy('created_at', 'asc')->get();
+        // ddd($offices); // $officesの中⾝を出⼒
+        return view('offices', [
+            'offices' => $offices
+        ]);
     }
 
     /**
@@ -42,34 +45,31 @@ class MembersController extends Controller
     {
         // バリデーション
         $validator = Validator::make($request->all(), [
-            'nickname' => 'required',
-            'email' => 'required',
-            'gender_code' => 'required',
-            'age_code' => 'required',
-            'password' => 'required',
-            'nickname' => 'required',
-            // 'password' == 'password2',
+            'office_name' => 'required',
+            'category_id' => 'required',
+            'address' => 'required',
         ]);
         // バリデーション:エラー
         if ($validator->fails()) {
             return redirect()
-                ->route('members.index')
+                ->route('offices.index')
                 ->withInput()
                 ->withErrors($validator);
         }
         // Eloquentモデル
-        $member = new Member;
-        $member->member_id = rand();
-        $member->nickname = $request->nickname;
-        $member->email = $request->email;
-        $member->last_name = $request->last_name;
-        $member->first_name = $request->first_name;
-        $member->gender_code = $request->gender_code;
-        $member->age_code = $request->age_code;
-        $member->password = $request->password;
-        $member->save();
-        // ルーティング「members.index」にリクエスト送信（⼀覧ページに移動）
-        return redirect()->route('members.index');
+        $office = new Office;
+        $office->office_number = $request->office_number;
+        $office->office_name = $request->office_name;
+        $office->category_id = $request->category_id;
+        $office->address = $request->address;
+        $office->phone_number = $request->phone_number;
+        $office->fax_number = $request->fax_number;
+        $office->email = $request->email;
+        $office->url = $request->url;
+        $office->photo_path = $request->photo_path;
+        $office->save();
+        // ルーティング「offices.index」にリクエスト送信（⼀覧ページに移動）
+        return redirect()->route('offices.index');
     }
 
     /**
