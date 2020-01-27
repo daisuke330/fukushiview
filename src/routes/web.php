@@ -31,9 +31,17 @@ Route::get('/test2', 'TestController@hoge');
 Route::get('/main', function () {
     return view('main');
 });
-Route::get('/serch_result', function () {
-    return view('serch_result');
+Route::get('/search', 'SearchController@index');
+
+Route::get('paginate', 'SearchController@index')->name('main');
+
+Route::get('/search_result', function () {
+    return view('search_result');
 });
+
+Route::resource('members', 'MembersController')->only([
+    'index', 'store', 'edit', 'update', 'destroy'
+]);
 
 
 // Route::get('/top', 'TopController@show');
