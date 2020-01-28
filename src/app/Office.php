@@ -9,9 +9,9 @@ class Office extends Model
 
     protected $fillable = ['id', 'office_name'];
     // officeはcategoryに従属
-    public function category()
+    public function categories()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class, 'category_id', 'id');
     }
     // officeはreviewsの親
     public function reviews()

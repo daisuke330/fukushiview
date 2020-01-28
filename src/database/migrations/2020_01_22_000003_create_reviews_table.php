@@ -21,6 +21,8 @@ class CreateReviewsTable extends Migration
             $table->text('weak_point');
             $table->datetime('posted_at');
             $table->boolean('is_pre');
+            $table->timestamps();
+
             $table->foreign('office_id')->references('id')->on('offices');
             $table->foreign('member_id')->references('id')->on('members');
         });

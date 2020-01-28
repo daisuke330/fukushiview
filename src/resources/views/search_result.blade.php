@@ -7,3 +7,11 @@
 <img src='login.png' alt='login' class='absolute2'>
 @endsection
 @section('content')
+
+<ul>
+    @foreach ($offices as $office)
+    <li>{{ $office->office_name }}</li>
+    @endforeach
+</ul>
+
+@endsection

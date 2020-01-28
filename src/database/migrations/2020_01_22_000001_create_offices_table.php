@@ -17,7 +17,7 @@ class CreateOfficesTable extends Migration
             $table->bigIncrements('id');
             $table->string('office_number', 30)->nullable();
             $table->string('office_name', 30);
-            $table->char('category_id', 3);
+            $table->unsignedBigInteger('category_id');
             $table->string('address', 255);
             $table->string('phone_number', 20)->nullable();
             $table->string('fax_number', 20)->nullable();
@@ -25,8 +25,8 @@ class CreateOfficesTable extends Migration
             $table->string('url', 100)->nullable();
             $table->string('photo_path', 100)->nullable();
             $table->unsignedInteger('votes')->default(0);
-            $table->datetime('created_at');
-            $table->datetime('updated_at');
+            $table->timestamps();
+
             $table->foreign('category_id')->references('id')->on('categories');
         });
     }

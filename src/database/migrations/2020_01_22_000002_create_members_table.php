@@ -23,9 +23,7 @@ class CreateMembersTable extends Migration
             $table->char('gender_code', 2);
             $table->char('age_code', 2)->references('id')->on('offices');
             $table->string('password', 100);
-            $table->datetime('created_at');
-            $table->datetime('updated_at');
-            // $table->primary(['id','member_id');
+            $table->timestamps();
         });
     }
 

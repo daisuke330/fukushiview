@@ -55,8 +55,8 @@
                     <input type="password" name="password" id="password" class="form-control">
                 </div>
                 <div class='sform'>
-                    <label for="password2" class="col-sm-3 control-label">パスワード（もう一度）</label>
-                    <input type="password" name="password2" id="password2" class="form-control">
+                    <label for="password_confirmation" class="col-sm-3 control-label">パスワード（もう一度）</label>
+                    <input type="password" name="password_confirmation" id="password2" class="form-control">
                 </div>
 
             </div>

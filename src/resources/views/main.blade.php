@@ -23,8 +23,8 @@
         </form> -->
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <form method="get" name='keyword' action="{{url('/search')}}" class="search_container">
-        <input type="text" size="35" placeholder="キーワード検索">
+    <form method="get" action="{{url('/search')}}" class="search_container">
+        <input type="text" name='keyword' size="35" value='' placeholder="キーワード検索">
         <input type="submit" value="&#xf002">
     </form>
 </div>
