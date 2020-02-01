@@ -39,11 +39,27 @@ Route::get('/search_result', function () {
     return view('search_result');
 });
 
+Route::get('/office_info', function () {
+    return view('office_info');
+});
+
 Route::resource('members', 'MembersController')->only([
     'index', 'store', 'edit', 'update', 'destroy'
 ]);
 
 Route::resource('offices', 'OfficesController')->only([
+    'index', 'store', 'edit', 'update', 'destroy'
+]);
+
+Route::get('/insert_reviews', function () {
+    return view('insert_reviews');
+});
+
+Route::resource('insertreviews', 'InsertReviewsController')->only([
+    'index', 'store', 'edit', 'update', 'destroy'
+]);
+
+Route::resource('officeinfo', 'OfficeInfoController')->only([
     'index', 'store', 'edit', 'update', 'destroy'
 ]);
 

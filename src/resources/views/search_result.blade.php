@@ -11,7 +11,11 @@
 <ul>
     @foreach ($offices as $office)
     <li>{{ $office->office_name }}</li>
-    @endforeach
+    <li>{{ $office->address }}</li>
+    <form action="{{ route('officeinfo.index',$office->id) }}" method="POST">
+        @csrf
+        <button type="submit" class="btn btn-danger">詳細</button>
+        @endforeach
 </ul>
 
 @endsection

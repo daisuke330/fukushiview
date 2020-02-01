@@ -22,6 +22,7 @@ class SearchController extends Controller
                 ->orWhereHas('categories', function ($query) use ($keyword) {
                     $query->where('category_name', 'like', '%' . $keyword . '%');
                 })
+                ->orWhere('address', 'like', '%' . $keyword . '%')
                 ->paginate(4);
 
             //リレーション関係にあるテーブルの事業種名から検索
