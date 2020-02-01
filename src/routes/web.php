@@ -33,7 +33,7 @@ Route::get('/index', function () {
 });
 Route::get('/search', 'SearchController@index');
 
-Route::get('paginate', 'SearchController@index')->name('main');
+Route::get('paginate', 'SearchController@index')->name('index');
 
 Route::get('/search_result', function () {
     return view('search_result');
@@ -62,6 +62,10 @@ Route::resource('insertreviews', 'InsertReviewsController')->only([
 Route::resource('officeinfo', 'OfficeInfoController')->only([
     'index', 'store', 'edit', 'update', 'destroy'
 ]);
+
+Route::get('/office_info', function () {
+    return view('office_info');
+});
 
 
 // Route::get('/top', 'TopController@show');

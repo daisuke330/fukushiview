@@ -16,11 +16,12 @@ class OfficeInfoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // idを受け取って、そのidの事業所情報を表示
     public function index($id)
     {
         // idを取得
         $office = Office::find($id);
-        ddd($office);
+        // ddd($office);
         return view('office_info', ['office' => $office]);
     }
 

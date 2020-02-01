@@ -97,6 +97,17 @@
             align-items: center;
         }
 
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .content2 {
+            display: flex;
+            justify-content: center;
+        }
+
         /* .search_container {
             box-sizing: border-box;
         }
