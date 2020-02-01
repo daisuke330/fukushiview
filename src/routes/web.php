@@ -28,8 +28,8 @@ Route::get('/test', function () {
 
 Route::get('/test2', 'TestController@hoge');
 
-Route::get('/main', function () {
-    return view('main');
+Route::get('/index', function () {
+    return view('index');
 });
 Route::get('/search', 'SearchController@index');
 

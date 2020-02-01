@@ -168,7 +168,7 @@
     <div class='flex-center'>
         <div class='relative'>
             <img src='fvbase.gif' alt=''>
-            <a href='/main'><img src='fvtitle.gif' alt='' class='absolute'></a>
+            <a href='/index'><img src='fvtitle.gif' alt='' class='absolute'></a>
             @yield('button1')
             @yield('button2')
             <img src='ask.png' alt='' class='absolute3'>
