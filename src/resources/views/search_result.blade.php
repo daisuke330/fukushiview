@@ -15,7 +15,7 @@
         <ul>
             @foreach ($offices as $office)
             <li>{{ $office->office_name }} 〒{{ $office->address }}
-                <form action="{{ route('officeinfo.index',$office->id) }}" method="GET">
+                <form action="{{ route('officeinfo.index',['id'=>$office->id]) }}" method="GET">
                     <!-- @csrf -->
                     <button type="submit" class="btn btn-danger">詳細</button>
                 </form>
@@ -27,8 +27,6 @@
         {{ $offices->links() }}
     </div>
 </div>
-
-
 
 
 @endsection

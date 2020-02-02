@@ -59,14 +59,13 @@ Route::resource('insertreviews', 'InsertReviewsController')->only([
     'index', 'store', 'edit', 'update', 'destroy'
 ]);
 
-Route::resource('officeinfo', 'OfficeInfoController')->only([
-    'index', 'store', 'edit', 'update', 'destroy'
-]);
+// Route::resource('officeinfo', 'OfficeInfoController')->only([
+//     'index', 'store', 'edit', 'update', 'destroy'
+// ]);
 
-Route::get('/office_info', function () {
-    return view('office_info');
-});
+// Route::get('/officeinfo/{id}', 'OfficeInfoController@index');
 
+Route::get('/officeinfo/{id}', 'OfficeInfoController@index')->name('officeinfo.index');
 
 // Route::get('/top', 'TopController@show');
 // Route::post('/top2', 'TopController@regist');
