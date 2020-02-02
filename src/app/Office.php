@@ -11,11 +11,11 @@ class Office extends Model
     // officeはcategoryに従属
     public function categories()
     {
-        return $this->belongsTo(Category::class, 'category_id', 'id');
+        return $this->belongsTo(Category::class, ['id', 'category_id']);
     }
     // officeはreviewsの親
     public function reviews()
     {
-        return $this->belongsTo(Review::class);
+        return $this->hasMany(Review::class);
     }
 }

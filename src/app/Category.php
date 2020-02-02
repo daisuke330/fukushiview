@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    protected $fillable = ['id', 'name'];
+    protected $fillable = ['id', 'category_name'];
     //Officesテーブルの親
     public function offices()
     {

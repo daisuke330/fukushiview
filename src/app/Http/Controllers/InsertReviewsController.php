@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use Validator;
 use App\Review;
+use App\Office;
 
 class InsertReviewsController extends Controller
 {
@@ -14,11 +15,10 @@ class InsertReviewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        $reviews = Review::all();
-        // 以下を追加
-        return view('reviews');
+        $office = Office::find($id);
+        return view('insert_reviews', ['office' => $office]);
     }
 
     /**
@@ -54,9 +54,11 @@ class InsertReviewsController extends Controller
         // Eloquentモデル
         $review = new Review;
         $review->office_id = $request->office_id;
-        $review->member_id = $request->member_id;
+        $review->member_id = 1;
         $review->strong_point = $request->strong_point;
         $review->weak_point = $request->weak_point;
+        $review->is_pre = 1;
+        $review->posted_at = '2020-02-02 12:58:03';
         $review->save();
         // ルーティング「insert_reviews.index」にリクエスト送信（⼀覧ページに移動）
         return redirect()->route('insertreviews.index');

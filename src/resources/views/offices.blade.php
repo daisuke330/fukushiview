@@ -93,7 +93,7 @@
                             <div>{{ $office->office_name }}</div>
                         </td>
                         <td>
-                            <!-- 削除ボタン -->
+                            <!-- 詳細ボタン -->
                             <form action="{{ route('officeinfo.index',$office->id) }}" method="GET">
                                 @csrf
                                 <button type="submit" class="btn btn-danger">詳細</button>

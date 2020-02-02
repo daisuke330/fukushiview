@@ -19,9 +19,9 @@ class SearchController extends Controller
         if (!empty($keyword)) {
             //事業所名から検索
             $offices = Office::where('office_name', 'like', '%' . $keyword . '%')
-                ->orWhereHas('categories', function ($query) use ($keyword) {
-                    $query->where('category_name', 'like', '%' . $keyword . '%');
-                })
+                // ->orWhereHas('categories', function ($query) use ($keyword) {
+                //     $query->where('category_name', 'like', '%' . $keyword . '%');
+                // })
                 ->orWhere('address', 'like', '%' . $keyword . '%')
                 ->paginate(4);
 

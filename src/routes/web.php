@@ -55,9 +55,9 @@ Route::get('/insert_reviews', function () {
     return view('insert_reviews');
 });
 
-Route::resource('insertreviews', 'InsertReviewsController')->only([
-    'index', 'store', 'edit', 'update', 'destroy'
-]);
+// Route::resource('insertreviews', 'InsertReviewsController')->only([
+//     'index', 'store', 'edit', 'update', 'destroy'
+// ]);
 
 // Route::resource('officeinfo', 'OfficeInfoController')->only([
 //     'index', 'store', 'edit', 'update', 'destroy'
@@ -66,6 +66,11 @@ Route::resource('insertreviews', 'InsertReviewsController')->only([
 // Route::get('/officeinfo/{id}', 'OfficeInfoController@index');
 
 Route::get('/officeinfo/{id}', 'OfficeInfoController@index')->name('officeinfo.index');
-
+Route::get('/insertreviews/{id}', 'InsertReviewsController@index')->name('insertreviews.index');
+Route::get('/insertreviews/{office_id}', 'InsertReviewsController@store')->name('insertreviews.store');
 // Route::get('/top', 'TopController@show');
 // Route::post('/top2', 'TopController@regist');
+
+Route::get('/review_verification', function () {
+    return view('review_verification');
+});

@@ -170,6 +170,14 @@
             top: -10px;
             outline: none;
         }
+
+        .review_box {
+            display: flex;
+        }
+
+        .review_box2 {
+            width: 200px;
+        }
     </style>
     <!-- Scripts -->
     <script src="{{ secure_asset('js/app.js') }}" defer></script>

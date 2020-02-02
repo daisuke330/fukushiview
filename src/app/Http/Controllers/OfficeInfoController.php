@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\DB;
+
 use App\Member;
 use App\Office;
 use App\Category;
@@ -21,8 +23,14 @@ class OfficeInfoController extends Controller
     {
         // idを取得
         $office = Office::find($id);
-        // ddd($office);
-        return view('office_info', ['office' => $office]);
+        $category = $office->category_id;
+        $category_name = Category::find($category);
+        $office_id = $office->id;
+        $reviews = DB::table('reviews')->where('office_id', $office_id)->get();
+        // $member_id = $reviews->member_id;
+        // $members = DB::table('members')->where('member_id', $member_id)->get();
+        // ddd($office, $office_id, $category_name, $reviews);
+        return view('office_info', ['office' => $office, 'category_name' => $category_name, 'reviews' => $reviews]);
     }
 
     /**
