@@ -61,7 +61,7 @@
                 <!-- 口コミ登録ボタン -->
                 <div class='sform'>
                     <div class="col-sm-offset-3 col-sm-6">
-                        <button type="submit" class="button" style="cursor:pointer">確認画面へ</button>
+                        <button type="submit" class="button" style="cursor:pointer">投稿</button>
                     </div>
                 </div>
             </div>

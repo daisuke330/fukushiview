@@ -21,8 +21,8 @@ $factory->define(Category::class, function (Faker $faker) {
         'code' => $faker->numerify('###'),
         'category_name' => $faker->randomElement([
             '就労移行支援',
-            'hoge',
-            'fuga',
+            '居宅介護',
+            '共同生活援助',
         ]),
     ];
 });
