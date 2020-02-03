@@ -3,6 +3,9 @@
 
 {{-- @yield('title')にテンプレートごとにtitleタグの値を代入 --}}
 @section('title', '事業所詳細')
+@section('button1')
+<a href='/members'><img src='kaiintoroku.png' alt='signin' class='absolute1'></a>
+@endsection
 @section('button2')
 <img src='login.png' alt='login' class='absolute2'>
 @endsection
@@ -22,8 +25,13 @@
     <div>
         <form action="{{ route('insertreviews.index',['id'=>$office->id]) }}" method="GET">
             @csrf
-            <button type="submit" class="btn btn-danger">口コミを書く</button>
+            <button type="submit" class="button" style="cursor:pointer">口コミを書く</button>
         </form>
+    </div>
+    <div class='review_box'>
+        <img src='strong.png' alt='strong'>
+        <div class='space2'></div>
+        <img src='weak.png' alt='weak'>
     </div>
     @foreach ($reviews as $review)
     <li>
@@ -31,6 +39,7 @@
         <!-- {{optional($review->strong_point)->strong_point}} -->
         <div class='review_box'>
             <div class='review_box2'>{{ $review->strong_point }}</div>
+            <div class='space2'></div>
             <div class='review_box2'>{{ $review->weak_point }}</div>
         </div>
 

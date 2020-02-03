@@ -3,6 +3,9 @@
 
 {{-- @yield('title')にテンプレートごとにtitleタグの値を代入 --}}
 @section('title', '会員登録')
+@section('button1')
+<a href='/members'><img src='kaiintoroku.png' alt='signin' class='absolute1'></a>
+@endsection
 @section('button2')
 <img src='login.png' alt='login' class='absolute2'>
 @endsection
@@ -64,7 +67,7 @@
         <!-- メンバー登録ボタン -->
         <div class='sform'>
             <div class="col-sm-offset-3 col-sm-6">
-                <button type="submit" class="btn btn-primary">登録</button>
+                <button type="submit" class="button" style="cursor:pointer">会員登録</button>
             </div>
         </div>
     </form>

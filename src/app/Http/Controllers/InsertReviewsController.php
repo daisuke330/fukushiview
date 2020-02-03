@@ -39,10 +39,11 @@ class InsertReviewsController extends Controller
      */
     public function store(Request $request)
     {
+        ddd($request);
         // バリデーション
         $validator = Validator::make($request->all(), [
-            'strong_point' => 'required|between:50,250',
-            'weak_point' => 'required|between:50,250',
+            'strong_point' => 'required|string|between:50,250',
+            'weak_point' => 'required|string|between:50,250',
         ]);
         // バリデーション:エラー
         if ($validator->fails()) {
@@ -60,6 +61,7 @@ class InsertReviewsController extends Controller
         $review->is_pre = 1;
         $review->posted_at = '2020-02-02 12:58:03';
         $review->save();
+        ddd($request);
         // ルーティング「insert_reviews.index」にリクエスト送信（⼀覧ページに移動）
         return redirect()->route('insertreviews.index');
     }

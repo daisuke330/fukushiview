@@ -3,6 +3,9 @@
 
 {{-- @yield('title')にテンプレートごとにtitleタグの値を代入 --}}
 @section('title', '検索結果')
+@section('button1')
+<a href='/members'><img src='kaiintoroku.png' alt='signin' class='absolute1'></a>
+@endsection
 @section('button2')
 <img src='login.png' alt='login' class='absolute2'>
 @endsection
@@ -15,10 +18,12 @@
         <ul>
             @foreach ($offices as $office)
             <li>{{ $office->office_name }} 〒{{ $office->address }}
-                <form action="{{ route('officeinfo.index',['id'=>$office->id]) }}" method="GET">
-                    <!-- @csrf -->
-                    <button type="submit" class="btn btn-danger">詳細</button>
-                </form>
+                <div class=''>
+                    <form action="{{ route('officeinfo.index',['id'=>$office->id]) }}" method="GET">
+                        <!-- @csrf -->
+                        <button type="submit" class="button2" style="cursor:pointer">詳細を見る</button>
+                    </form>
+                </div>
             </li>
             @endforeach
         </ul>

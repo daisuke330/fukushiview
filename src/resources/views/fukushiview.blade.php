@@ -84,6 +84,10 @@
             height: 100px;
         }
 
+        .space2 {
+            width: 100px;
+        }
+
         /*フォーム全体*/
         .sform {
             display: flex;
@@ -100,12 +104,18 @@
         .content {
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
         }
 
         .content2 {
             display: flex;
             justify-content: center;
+        }
+
+        .content3 {
+            display: flex;
+            justify-content: right;
         }
 
         /* .search_container {
@@ -178,9 +188,72 @@
         .review_box2 {
             width: 200px;
         }
-    </style>
-    <!-- Scripts -->
-    <script src="{{ secure_asset('js/app.js') }}" defer></script>
+
+        .textarea {
+            resize: none;
+            width: 300px;
+            height: 200px;
+        }
+
+        .button {
+            /* 文字サイズを1.4emに指定 */
+            font-size: 1.4em;
+
+            /* 文字の太さをboldに指定 */
+            font-weight: bold;
+
+            /* 縦方向に10px、
+9
+     * 横方向に30pxの余白を指定 */
+            padding: 10px 30px;
+
+            /* 文字色を白色に指定 */
+            color: #fff;
+
+            /* ボーダーをなくす */
+            border-style: none;
+            /* グラデーションの指定 */
+            background: -moz-linear-gradient(bottom, #36d, #248 50%, #36d);
+            background: -webkit-gradient(linear, left bottom, left top, from(#36d), color-stop(0.5, #248), to(#36d));
+
+            /* 角丸の指定 */
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+
+        }
+
+        .button2 {
+            /* 文字サイズを1.4emに指定 */
+            font-size: 1.0em;
+
+
+            /* 縦方向に10px、
+9
+     * 横方向に30pxの余白を指定 */
+            padding: 5px 20px;
+
+            /* 文字色を白色に指定 */
+            color: #fff;
+
+            /* ボーダーをなくす */
+            border-style: none;
+            /* グラデーションの指定 */
+            background: -moz-linear-gradient(bottom, #36d, #248 50%, #36d);
+            background: -webkit-gradient(linear, left bottom, left top, from(#36d), color-stop(0.5, #248), to(#36d));
+
+            /* 角丸の指定 */
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+
+        }
+
+        /* 
+    </style> */
+    /*
+    <!-- Scripts
+    <script src="{{ secure_asset('js/app.js') }}" defer></script> --> */
 </head>
 
 <body>
