@@ -22,6 +22,8 @@
         email：{{$office->email}}<br>
         ホームページ：{{$office->url}}
     </div>
+    <div class='space'>
+    </div>
     <div>
         <form action=" {{ route('insertreviews.index',['id'=>$office->id]) }}" method="GET">
             @csrf
@@ -37,7 +39,7 @@
     </div>
     @foreach ($reviews as $review)
     <li>
-        ID:{{$review->member_id}}<br>
+        ID:{{$review->member_id}}さんのコメント<br>
         <!-- {{optional($review->strong_point)->strong_point}} -->
         <div class='review_box'>
             <div class='review_box2'>{{ $review->strong_point }}</div>
