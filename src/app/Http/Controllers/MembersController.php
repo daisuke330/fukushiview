@@ -46,7 +46,7 @@ class MembersController extends Controller
             'email' => 'required',
             'gender_code' => 'required',
             'age_code' => 'required',
-            'password' => 'required|confirmed|string|between:4,8',
+            'password' => 'required|confirmed|string|between:8,20',
             // 'nickname' => 'required',
             // 'password' == 'password2',
         ]);
