@@ -54,7 +54,7 @@
                     <input type="radio" name="age_code" id="age_code" value='7' class="form-control">７０代　
                 </div>
                 <div class='sform'>
-                    <label for="password" class="col-sm-3 control-label">パスワード（必須）</label>
+                    <label for="password" class="col-sm-3 control-label">パスワード（8文字以上20文字まで）</label>
                     <input type="password" name="password" id="password" class="form-control">
                 </div>
                 <div class='sform'>
