@@ -50,7 +50,7 @@ class InsertReviewsController extends Controller
         // バリデーション:エラー
         if ($validator->fails()) {
             return redirect()
-                ->route('insertreviews.index', ['id' => $request->office_id, 'strong' => $request->strong_point, 'weak' => $request->weak_point])
+                ->route('insertreviews.index', ['id' => $request->office_id])
                 ->withInput()
                 ->withErrors($validator);
         }
