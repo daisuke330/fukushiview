@@ -18,8 +18,6 @@ class InsertReviewsController extends Controller
     public function index($id)
     {
         $office = Office::find($id);
-        $strong_point = null;
-        $weak_point = null;
         return view('insert_reviews', ['office' => $office]);
     }
 
