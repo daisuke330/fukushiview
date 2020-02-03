@@ -51,6 +51,10 @@ Route::get('/insert_reviews', function () {
     return view('insert_reviews');
 });
 
+// Route::resource('insertreviews', 'InsertReviewsController')->only([
+//     'index', 'store', 'edit', 'update', 'destroy'
+// ]);
+
 Route::get('/officeinfo/{id}', 'OfficeInfoController@index')->name('officeinfo.index');
 Route::get('/insertreviews/{id}', 'InsertReviewsController@index')->name('insertreviews.index');
 Route::post('/insertreviews/{office_id}', 'InsertReviewsController@store')->name('insertreviews.store');
