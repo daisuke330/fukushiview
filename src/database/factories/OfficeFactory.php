@@ -22,7 +22,7 @@ $factory->define(Office::class, function (Faker $faker) {
             $min = 1,
             $max = 999
         ),
-        'office_name' => $faker->lastKanaName . 'グループホーム',
+        'office_name' => $faker->lastKanaName . '事業所',
         // 'category_id' => '4',
         'address' => $faker->address,
         'phone_number' => $faker->phoneNumber,
