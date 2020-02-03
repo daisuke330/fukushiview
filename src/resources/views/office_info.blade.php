@@ -38,16 +38,14 @@
         <img src="{{asset('weak.png')}}" alt='weak' class='img'>
     </div>
     @foreach ($reviews as $review)
-    <li>
-        ID:{{$review->member_id}}さんのコメント<br>
-        <!-- {{optional($review->strong_point)->strong_point}} -->
-        <div class='review_box'>
-            <div class='review_box2'>{{ $review->strong_point }}</div>
-            <div class='space3'></div>
-            <div class='review_box2'>{{ $review->weak_point }}</div>
-        </div>
-
-    </li>
+    <div class='sform'>member_id:{{$review->member_id}}さんのコメント</div>
+    <!-- {{optional($review->strong_point)->strong_point}} -->
+    <div class='review_box'>
+        <div class='review_box2'>{{ $review->strong_point }}</div>
+        <div class='space3'></div>
+        <div class='review_box2'>{{ $review->weak_point }}</div>
+    </div>
+    <br>
     @endforeach
 </div>
 @endsection
