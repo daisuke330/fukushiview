@@ -18,6 +18,8 @@ class InsertReviewsController extends Controller
     public function index($id)
     {
         $office = Office::find($id);
+        $strong_point = null;
+        $weak_point = null;
         return view('insert_reviews', ['office' => $office]);
     }
 
@@ -39,7 +41,7 @@ class InsertReviewsController extends Controller
      */
     public function store(Request $request)
     {
-        ddd($request);
+        // ddd($request);
         // バリデーション
         $validator = Validator::make($request->all(), [
             'strong_point' => 'required|string|between:50,250',
@@ -48,7 +50,7 @@ class InsertReviewsController extends Controller
         // バリデーション:エラー
         if ($validator->fails()) {
             return redirect()
-                ->route('insertreviews.index')
+                ->route('insertreviews.index', ['id' => $request->office_id, 'strong' => $request->strong_point, 'weak' => $request->weak_point])
                 ->withInput()
                 ->withErrors($validator);
         }
@@ -61,9 +63,9 @@ class InsertReviewsController extends Controller
         $review->is_pre = 1;
         $review->posted_at = '2020-02-02 12:58:03';
         $review->save();
-        ddd($request);
-        // ルーティング「insert_reviews.index」にリクエスト送信（⼀覧ページに移動）
-        return redirect()->route('insertreviews.index');
+        // ddd($request);
+        // ルーティング「OfficeInfoController.index」にリクエスト送信（⼀覧ページに移動）
+        return redirect()->route('officeinfo.index', ['id' => $review->office_id]);
     }
 
     /**

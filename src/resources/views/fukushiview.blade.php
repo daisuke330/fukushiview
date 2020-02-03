@@ -68,9 +68,19 @@
         .absolute4 {
             position: absolute;
             height: 35px;
-            left: 50px;
+            left: 70px;
             top: 135px;
             color: #636b6f;
+        }
+
+        .absolute5 {
+            position: absolute;
+            height: 35px;
+            left: 320px;
+            top: 65px;
+            color: black;
+            font-size: 1.5em;
+            font-style: bold;
         }
 
         .title_comment {
@@ -81,11 +91,15 @@
         }
 
         .space {
-            height: 100px;
+            height: 50px;
         }
 
         .space2 {
             width: 100px;
+        }
+
+        .space3 {
+            width: 200px;
         }
 
         /*フォーム全体*/
@@ -191,7 +205,7 @@
 
         .textarea {
             resize: none;
-            width: 300px;
+            width: 200px;
             height: 200px;
         }
 
@@ -246,26 +260,27 @@
             -moz-border-radius: 5px;
             -webkit-border-radius: 5px;
             border-radius: 5px;
-
         }
 
-        /* 
-    </style> */
-    /*
-    <!-- Scripts
-    <script src="{{ secure_asset('js/app.js') }}" defer></script> --> */
+        .img {
+            width: 300px;
+        }
+    </style>
 </head>
 
 <body>
     <div class='flex-center'>
         <div class='relative'>
-            <img src='fvbase.gif' alt=''>
-            <a href='/index'><img src='fvtitle.gif' alt='' class='absolute'></a>
+            <img src="{{asset('fvbase.gif')}}" alt=''>
+            <a href='/index'><img src="{{asset('fvtitle.gif')}}" alt='' class='absolute'></a>
             @yield('button1')
             @yield('button2')
-            <img src='ask.png' alt='' class='absolute3'>
+            <img src="{{asset('ask.png')}}" alt='' class='absolute3'>
             <p class='absolute4'>
-                フクシビューは障がい福祉事業所についてみなさまからの声を集め、みなさまに合った事業所選びのためのサイトです。
+                フクシビューは障がい福祉事業所についてみなさまからの声を集めた、みなさまに合った事業所選びのためのサイトです。
+            </p>
+            <p class='absolute5'>
+                あなたからあなたへ　フクシのヒント
             </p>
         </div>
     </div>

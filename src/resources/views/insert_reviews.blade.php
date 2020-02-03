@@ -4,15 +4,15 @@
 {{-- @yield('title')にテンプレートごとにtitleタグの値を代入 --}}
 @section('title', '口コミ投稿')
 @section('button1')
-<a href='/members'><img src='kaiintoroku.png' alt='signin' class='absolute1'></a>
+<a href='/members'><img src="{{asset('kaiintoroku.png')}}" alt='signin' class='absolute1'></a>
 @endsection
 @section('button2')
-<img src='login.png' alt='login' class='absolute2'>
+<img src="{{asset('login.png')}}" alt='login' class='absolute2'>
 @endsection
 
 @section('content')
 <div class='content'>
-    <h3>{{$office->office_name}}</h3>
+    <h2>{{$office->office_name}}</h2>
 
     <div>
         住所：〒{{$office->address}}<br>
@@ -24,7 +24,7 @@
     <div class='sform'>
         <h1>口コミ投稿</h1>
     </div>
-    <div class="panel-body">
+    <div class=" panel-body">
         <!-- バリデーションエラーの表⽰に使⽤するエラーファイル-->
         @include('common.errors')
         <!-- 口コミ登録フォーム -->
@@ -35,15 +35,15 @@
                 <div class='content'>
                     <div class="content2">
                         <div class='content'>
-                            <label for="strong_point" class="col-sm-3 control-label">良かった点</label>
-                            <img src='strong.png' alt='strong'>
+                            <label for="strong_point" class="col-sm-3 control-label"></label>
+                            <img src="{{asset('strong.png')}}" alt='strong' class='img'>
                             <br>
                             <textarea name="strong_point" id="strong_point" class="textarea"></textarea>
                         </div>
                         <div class='space2'></div>
                         <div class='content'>
-                            <label for="weak_point" class="col-sm-3 control-label">気になる点</label>
-                            <img src='weak.png' alt='weak'>
+                            <label for="weak_point" class="col-sm-3 control-label"></label>
+                            <img src="{{asset('weak.png')}}" alt='weak' class='img'>
                             <br>
                             <textarea name="weak_point" id="weak_point" class="textarea"></textarea>
                         </div>
@@ -67,4 +67,5 @@
             </div>
         </form>
     </div>
+
     @endsection
