@@ -47,8 +47,6 @@ class MembersController extends Controller
             'gender_code' => 'required',
             'age_code' => 'required',
             'password' => 'required|confirmed|string|between:8,20',
-            // 'nickname' => 'required',
-            // 'password' == 'password2',
         ]);
         // バリデーション:エラー
         if ($validator->fails()) {
