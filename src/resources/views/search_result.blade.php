@@ -13,18 +13,20 @@
 <div class='content'>
     <h1>検索結果</h1>
     <h2>検索ワード：{{$keyword}}</h2>
-    <div>
+    <div class='center'>
         <!-- リスト表示部分 -->
         <ul>
             @foreach ($offices as $office)
-            <li>{{ $office->office_name }} 〒{{ $office->address }}
-                <div class=''>
+            <li>{{ $office->office_name }} <br>〒{{ $office->address }}
+                <div class='button3'>
                     <form action="{{ route('officeinfo.index',['id'=>$office->id]) }}" method="GET">
                         <!-- @csrf -->
                         <button type="submit" class="button2" style="cursor:pointer">詳細を見る</button>
                     </form>
+
                 </div>
             </li>
+            <br>
             @endforeach
         </ul>
     </div>
