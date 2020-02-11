@@ -32,6 +32,7 @@ class SearchController extends Controller
         } else { //キーワードが入力されていない場合
             $offices = DB::table('offices')->paginate(20);
         }
+
         //検索結果へ
         return view('search_result', [
             'offices' => $offices,
