@@ -9,7 +9,7 @@ class DatabaseSeeder extends Seeder
         factory(\App\Category::class, 3)
             ->create()
             ->each(function ($category) {
-                factory(\App\Office::class, 5)->create([
+                factory(\App\Office::class, 500)->create([
                     'category_id' => $category->id,
                 ]);
             });;

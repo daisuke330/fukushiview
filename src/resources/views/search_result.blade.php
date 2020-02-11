@@ -15,7 +15,7 @@
     <h2>検索ワード：{{$keyword}}</h2>
     <div class='center'>
         <!-- リスト表示部分 -->
-        <ul>
+        <ol>
             @foreach ($offices as $office)
             <li>{{ $office->office_name }} <br>〒{{ $office->address }}
                 <div class='button3'>
@@ -28,12 +28,12 @@
             </li>
             <br>
             @endforeach
-        </ul>
+        </ol>
     </div>
-    <div class='content2'>
-        {{ $offices->links() }}
-    </div>
-</div>
 
+</div>
+<div class='content2'>
+    {{ $offices->links() }}
+</div>
 
 @endsection
