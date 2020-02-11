@@ -23,14 +23,14 @@ class SearchController extends Controller
                 //     $query->where('category_name', 'like', '%' . $keyword . '%');
                 // })
                 ->orWhere('address', 'like', '%' . $keyword . '%')
-                ->paginate(4);
+                ->paginate(20);
 
             //リレーション関係にあるテーブルの事業種名から検索
             // $offices = Office::whereHas('categories', function ($query) use ($keyword) {
             //     $query->where('category_name', 'like', '%' . $keyword . '%');
             // })->paginate(4);
         } else { //キーワードが入力されていない場合
-            $offices = DB::table('offices')->paginate(4);
+            $offices = DB::table('offices')->paginate(20);
         }
         //検索結果へ
         return view('search_result', [
