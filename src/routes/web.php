@@ -54,8 +54,7 @@ Route::get('/insert_reviews', function () {
 Route::get('/officeinfo/{id}', 'OfficeInfoController@index')->name('officeinfo.index');
 Route::get('/insertreviews/{id}', 'InsertReviewsController@index')->name('insertreviews.index');
 Route::post('/insertreviews/{office_id}', 'InsertReviewsController@store')->name('insertreviews.store');
-// Route::get('/top', 'TopController@show');
-// Route::post('/top2', 'TopController@regist');
+
 
 Route::get('/review_verification', function () {
     return view('review_verification');
